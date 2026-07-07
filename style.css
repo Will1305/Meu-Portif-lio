@@ -1,0 +1,620 @@
+/* ==========================================================================
+   RESET E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top right, #003b5c, #001f3d 40%, #0b001a 100%);
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   CABEÇALHO (HEADER & NAV)
+   ========================================================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    background: rgba(11, 0, 26, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    color: #00d2ff;
+    font-size: 32px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.brand-logo:hover {
+    transform: scale(1.05);
+}
+
+.brand-logo i {
+    filter: drop-shadow(0 0 12px rgba(0, 210, 255, 0.6));
+}
+
+nav a {
+    color: #f8fafc;
+    text-decoration: none;
+    margin-left: 35px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    opacity: 0.65;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    opacity: 1;
+    color: #00d2ff;
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.4);
+}
+
+/* ==========================================================================
+   CONTEÚDO PRINCIPAL (MAIN)
+   ========================================================================== */
+main {
+    display: flex;
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 0 8%;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    gap: 80px;
+}
+
+.content-section {
+    flex: 1.3;
+}
+
+.content-section h1 {
+    font-size: 36px;
+    margin-bottom: 35px;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+}
+
+.services-list {
+    list-style: none;
+}
+
+.services-list li {
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: justify;
+    color: #cbd5e1;
+    position: relative;
+    padding-left: 25px;
+}
+
+.services-list li::before {
+    content: "•";
+    color: #00d2ff;
+    font-size: 24px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    text-shadow: 0 0 8px rgba(0, 210, 255, 0.8);
+}
+
+/* ==========================================================================
+   BLOCO DE PERFIL (FOTO E NOME)
+   ========================================================================== */
+.profile-side {
+    flex: 0.7;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar-wrapper {
+    position: relative;
+    width: 270px;
+    height: 270px;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(135deg, #00d2ff 0%, #0055ff 100%);
+    box-shadow: 0 0 40px rgba(0, 150, 255, 0.35);
+}
+
+.avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-side h2 {
+    font-size: 30px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.profile-side p {
+    color: #00d2ff;
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   RODAPÉ REFORMULADO (PROFISSIONAL)
+   ========================================================================== */
+footer {
+    background: rgba(2, 12, 27, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 60px 8%;
+    border-top: 1px solid rgba(0, 210, 255, 0.1);
+}
+
+.footer-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Alinha os blocos na mesma altura */
+    gap: 60px;
+}
+
+.contact-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #00d2ff;
+}
+
+.footer-left-wrapper {
+    flex: 1.4;
+}
+
+.footer-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.qr-code {
+    width: 150px;
+    height: 150px;
+    background: #ffffff; /* Fundo branco puro destaca melhor o QR Code */
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-code img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 14px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%; /* Ocupa o espaço correto do container flexível */
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    background: rgba(15, 23, 42, 0.6);
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input::placeholder, .form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #00d2ff;
+    box-shadow: 0 0 12px rgba(0, 210, 255, 0.3);
+    background: rgba(15, 23, 42, 0.9);
+}
+
+.form-group textarea {
+    height: 90px;
+    resize: none;
+}
+
+/* Botão Corporativo Call-to-Action */
+.btn-submit {
+    background: linear-gradient(135deg, #00d2ff 0%, #0066ff 100%);
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 210, 255, 0.5);
+    filter: brightness(1.1);
+}
+
+/* Bloco Lateral de Contatos Diretos */
+.footer-right {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    padding-left: 40px;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 15px;
+}
+
+.contact-info i {
+    color: #020c1b;
+    background: #00d2ff;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px; /* Formato quadrado arredondado moderno */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    box-shadow: 0 4px 12px rgba(0, 210, 255, 0.2);
+}
+
+.contact-info a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.contact-info a:hover {
+    color: #00d2ff;
+    padding-left: 5px; /* Sutil efeito de movimento ao passar o mouse */
+}
+
+/* Ajustes Responsivos para Mobile */
+@media (max-width: 900px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .footer-left {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    .contact-form {
+        width: 100%;
+    }
+    .footer-right {
+        border-left: none;
+        padding-left: 0;
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 30px;
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (MOBILE / TABLET)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    header {
+        padding: 25px 4%;
+    }
+    main {
+        padding: 0 4%;
+        gap: 40px;
+    }
+    footer {
+        padding: 60px 4%;
+    }
+}
+
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    nav a {
+        margin: 0 12px;
+    }
+    main {
+        flex-direction: column-reverse;
+        text-align: center;
+        margin: 40px auto;
+    }
+    .content-section h1 {
+        font-size: 28px;
+    }
+    .services-list li {
+        text-align: center;
+        padding-left: 0;
+    }
+    .services-list li::before {
+        display: none;
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    .footer-left {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .footer-right {
+        padding-top: 0;
+        align-items: center;
+    }
+}
+
+/* ==========================================================================
+   ESTILOS UNIFICADOS (HEADER, CARDS E FOOTER PREMIUM)
+   ========================================================================== */
+
+/* Ajuste Geral do Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(2, 12, 27, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+header nav a:hover {
+    color: #00d2ff;
+    opacity: 1;
+}
+
+/* Rodapé Reformulado Profissional */
+footer {
+    background: rgba(2, 12, 27, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 60px 8%;
+    border-top: 1px solid rgba(0, 210, 255, 0.1);
+    margin-top: 60px;
+}
+
+.footer-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 60px;
+}
+
+.contact-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #00d2ff;
+}
+
+.footer-left-wrapper {
+    flex: 1.4;
+}
+
+.footer-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.qr-code {
+    width: 150px;
+    height: 150px;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.qr-code img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 14px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    background: rgba(15, 23, 42, 0.6);
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input::placeholder, .form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #00d2ff;
+    box-shadow: 0 0 12px rgba(0, 210, 255, 0.3);
+    background: rgba(15, 23, 42, 0.9);
+}
+
+.form-group textarea {
+    height: 90px;
+    resize: none;
+}
+
+/* Botão Moderno com Degradê e Brilho */
+.btn-submit {
+    background: linear-gradient(135deg, #00d2ff 0%, #0066ff 100%);
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
+    width: 100%;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 210, 255, 0.5);
+    filter: brightness(1.1);
+}
+
+/* Bloco Lateral de Contatos Diretos */
+.footer-right {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    padding-left: 40px;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 15px;
+}
+
+.contact-info i {
+    color: #020c1b;
+    background: #00d2ff;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    box-shadow: 0 4px 12px rgba(0, 210, 255, 0.2);
+}
+
+.contact-info a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.contact-info a:hover {
+    color: #00d2ff;
+    padding-left: 5px;
+}
+
+/* Responsividade para Telas Menores */
+@media (max-width: 900px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .footer-left {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    .footer-right {
+        border-left: none;
+        padding-left: 0;
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 30px;
+    }
+}

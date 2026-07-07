@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - William Alves</title>
+    <!-- Font Awesome para os Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Vinculando o arquivo CSS unificado -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos exclusivos para a Galeria de Artes */
+        .portfolio-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 4%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .portfolio-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .portfolio-intro h1 {
+            font-size: 36px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .portfolio-intro p {
+            color: #94a3b8;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Controles do Filtro Interativo */
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            padding: 12px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: rgba(0, 210, 255, 0.4);
+            color: #ffffff;
+            background: rgba(0, 210, 255, 0.05);
+        }
+
+        .filter-btn.active {
+            background: rgba(0, 210, 255, 0.1);
+            border-color: #00d2ff;
+            color: #00d2ff;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+        }
+
+        /* Seções do Portfólio (Iniciam visíveis, controladas via JS) */
+        .portfolio-section {
+            display: block;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            font-size: 22px;
+            color: #00d2ff;
+            margin-bottom: 25px;
+            font-weight: 600;
+            border-left: 4px solid #00d2ff;
+            padding-left: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Grid para Artes Quadradas (Mobile) */
+        .grid-squares {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        /* Grid para Banners Largos (Desktop) */
+        .grid-banners {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .art-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .art-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 210, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.1);
+        }
+
+        .art-thumb {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            position: relative;
+            display: block;
+        }
+
+        .art-thumb img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .art-card:hover .art-thumb img {
+            transform: scale(1.03);
+        }
+
+        .art-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .art-info h2 {
+            font-size: 18px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .art-info p {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .art-tag {
+            align-self: flex-start;
+            background: rgba(0, 210, 255, 0.08);
+            color: #00d2ff;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            border: 1px solid rgba(0, 210, 255, 0.1);
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="brand-logo">
+            <i class="fas fa-eye"></i>
+        </a>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="portfolio.html" style="color: #00d2ff; opacity: 1;">Portfólio</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main class="portfolio-container">
+        
+        <section class="portfolio-intro">
+            <h1>Portfólio de Comunicação Visual</h1>
+            <p>Desenvolvimento de layouts e peças publicitárias integradas para e-commerce e sites corporativos.</p>
+        </section>
+
+        <!-- Barra de Botões Interativos -->
+        <div class="portfolio-filters">
+            <button class="filter-btn active" onclick="filterPortfolio('todos')">
+                <i class="fas fa-th-large"></i> Ver Todos
+            </button>
+            <button class="filter-btn" onclick="filterPortfolio('mobile')">
+                <i class="fas fa-mobile-alt"></i> Formatos Mobile
+            </button>
+            <button class="filter-btn" onclick="filterPortfolio('desktop')">
+                <i class="fas fa-desktop"></i> Banners Desktop
+            </button>
+        </div>
+
+        <!-- SEÇÃO 1: FORMATO MOBILE (QUADRADAS) -->
+        <section id="sec-mobile" class="portfolio-section">
+            <h2 class="section-title">Formatos Mobile / Redes Sociais</h2>
+            <div class="grid-squares">
+                
+                <div class="art-card">
+                    <div class="art-thumb"><img src="Port15.jpg" alt="Campanha Volta às Aulas 2025 - Mobile"></div>
+                    <div class="art-info">
+                        <h2>Campanha Volta às Aulas 2025</h2>
+                        <p>Layout quadrado otimizado para navegação móvel e e-commerce.</p>
+                        <span class="art-tag">Mobile Layout</span>
+                    </div>
+                </div>
+
+                <div class="art-card">
+                    <div class="art-thumb"><img src="Port3.jpg" alt="Coleção Capivaras Tilibra - Mobile"></div>
+                    <div class="art-info">
+                        <h2>Coleção Capivaras Tilibra</h2>
+                        <p>Design temático focado no público jovem para interfaces mobile.</p>
+                        <span class="art-tag">Mobile Layout</span>
+                    </div>
+                </div>
+
+                <div class="art-card">
+                    <div class="art-thumb"><img src="Port7.jpg" alt="Campanha Black Friday - Mobile"></div>
+                    <div class="art-info">
+                        <h2>Black Friday - Até 70% Off</h2>
+                        <p>Design de alto impacto visual focado em conversão e promoções relâmpago.</p>
+                        <span class="art-tag">Promoção</span>
+                    </div>
+                </div>
+
+                <div class="art-card">
+                    <div class="art-thumb"><img src="Port11.jpg" alt="Linha Faber-Castell - Mobile"></div>
+                    <div class="art-info">
+                        <h2>Linha de Produtos Faber-Castell</h2>
+                        <p>Composição de produtos focada em destacar a criatividade e inovação.</p>
+                        <span class="art-tag">E-commerce</span>
+                    </div>
+                </div>
+
+                <div class="art-card">
+                    <div class="art-thumb"><img src="Port13.jpg" alt="Agendas Tilibra - Mobile"></div>
+                    <div class="art-info">
+                        <h2>Catálogo de Agendas Tilibra</h2>
+                        <p>Chamada para ação clara integrada ao portfólio de produtos de papelaria.</p>
+                        <span class="art-tag">Mobile Layout</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: BANNERS DESKTOP (LARGOS) -->
+        <section id="sec-desktop" class="portfolio-section">
+            <h2 class="section-title">Banners de Destaque (Desktop)</h2>
+            <div class="grid-banners">
+                
+                <div class="art-card">
+                    <div class="art-thumb"><img src="Port16.jpg" alt="Banner Desktop Volta às Aulas 2025"></div>
+                    <div class="art-info">
+                        <h2>Banner Principal - Volta às Aulas 2025</h2>
+                        <p>Adaptação panorâmica horizontal para topo de site e-commerce e carrosséis principais.</p>
+                        <span class="art-tag">Desktop Banner</span>
+                    </div>
+                </div>
+
+                <div class="art-card">
+                    <div class="art-thumb"><img src="Port4.jpg" alt="Banner Desktop Capivaras"></div>
+                    <div class="art-info">
+                        <h2>Banner de Categoria - Capivaras Dominaram Tudo</h2>
+                        <p>Layout horizontal com distribuição fluida de elementos gráficos e áreas de texto legíveis.</p>
+                        <span class="art-tag">Desktop Banner</span>
+                    </div>
+                </div>
+
+                <div class="art-card">
+                    <div class="art-thumb"><img src="Port8.jpg" alt="Banner Desktop Black Friday"></div>
+                    <div class="art-info">
+                        <h2>Banner Promocional - Black Friday E-commerce</h2>
+                        <p>Disposição estendida com contraste agressivo de cores para atrair cliques imediatos no desktop.</p>
+                        <span class="art-tag">Desktop Banner</span>
+                    </div>
+                </div>
+
+                <div class="art-card">
+                    <div class="art-thumb"><img src="Port12.jpg" alt="Banner Desktop Faber-Castell"></div>
+                    <div class="art-info">
+                        <h2>Banner Institucional - Criatividade Faber-Castell</h2>
+                        <p>Alinhamento de marca com uso inteligente de espaços negativos para o topo do site.</p>
+                        <span class="art-tag">Desktop Banner</span>
+                    </div>
+                </div>
+
+                <div class="art-card">
+                    <div class="art-thumb"><img src="Port14.jpg" alt="Banner Desktop Agendas Tilibra"></div>
+                    <div class="art-info">
+                        <h2>Banner de Destaque - Agendas Tilibra</h2>
+                        <p>Equilíbrio visual combinando texturas de fundo com a exibição limpa da linha de produtos.</p>
+                        <span class="art-tag">Desktop Banner</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contato">
+        <div class="footer-container">
+            <div class="footer-left-wrapper">
+                <h3 class="contact-title">contato</h3>
+                <div class="footer-left">
+                    <div class="qr-code">
+                        <img src="QR CODE WPP.jpeg" alt="QR Code WhatsApp">
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="E-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Como posso ajudar no seu projeto?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:will.alves1305@outlook.com">will.alves1305@outlook.com</a>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="https://wa.me/5511960753222" target="_blank">(11) 96075-3222</a>
+                </div>
+                <div class="contact-info">
+                    <i class="fab fa-linkedin-in"></i>
+                    <a href="https://linkedin.com/in/" target="_blank">linkedin.com/in/william-alves</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para controlar a troca de visualização -->
+    <script>
+        function filterPortfolio(category) {
+            // Seleciona os elementos das seções
+            const mobileSection = document.getElementById('sec-mobile');
+            const desktopSection = document.getElementById('sec-desktop');
+            
+            // Remove a classe active de todos os botões do filtro
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Adiciona a classe active no botão clicado com base no evento atual
+            event.currentTarget.classList.add('active');
+
+            // Lógica para esconder ou mostrar as seções com animação
+            if (category === 'todos') {
+                mobileSection.style.display = 'block';
+                desktopSection.style.display = 'block';
+            } else if (category === 'mobile') {
+                mobileSection.style.display = 'block';
+                desktopSection.style.display = 'none';
+            } else if (category === 'desktop') {
+                mobileSection.style.display = 'none';
+                desktopSection.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim - William Alves</title>
+    <!-- Font Awesome para os Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Vinculando o arquivo CSS unificado -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para organizar a estrutura da página Sobre */
+        .about-page-container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 4%;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .about-hero {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .about-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, #00d2ff, #0066ff);
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
+            flex-shrink: 0;
+        }
+
+        .about-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .about-intro-text h1 {
+            font-size: 32px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .about-intro-text h2 {
+            font-size: 18px;
+            color: #00d2ff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .about-intro-text p {
+            color: #cbd5e1;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .cv-section-title {
+            font-size: 22px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffffff;
+            border-left: 4px solid #00d2ff;
+            padding-left: 15px;
+            margin-bottom: 30px;
+        }
+
+        .skills-timeline {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .skill-item {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 25px;
+            border-radius: 12px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-3px);
+            border-color: rgba(0, 210, 255, 0.2);
+            background: rgba(0, 210, 255, 0.01);
+        }
+
+        .skill-icon {
+            font-size: 24px;
+            color: #00d2ff;
+            background: rgba(0, 210, 255, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .skill-info h3 {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .skill-info p {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+            .about-intro-text p {
+                text-align: center;
+            }
+            .skills-timeline {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+    <a href="index.html" class="brand-logo">
+        <i class="fas fa-eye"></i>
+    </a>
+    <nav>
+    <a href="index.html">Início</a>
+    <a href="sobre.html" style="color: #00d2ff; opacity: 1;">Sobre</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="portfolio.html">Portfólio</a> <!-- Novo Link -->
+    <a href="#contato">Contato</a>
+</nav>
+</header>
+
+    <main class="about-page-container">
+        
+        <!-- Bloco Perfil Resumido -->
+        <section class="about-hero">
+            <div class="about-photo">
+                <!-- Nome da foto corrigido para Will.jpeg -->
+                <img src="Will.jpeg" alt="William Alves">
+            </div>
+            <div class="about-intro-text">
+                <h1>William Alves</h1>
+                <h2>Consultor de TI & Soluções Digitais</h2>
+                <p>
+                    Com sólida experiência no setor de tecnologia, atuo de forma estratégica para transformar e otimizar processos analógicos em soluções digitais eficientes. Meu foco é estruturar a base técnica, a automação comercial e a comunicação visual necessárias para o crescimento estruturado de negócios físicos e digitais.
+                </p>
+            </div>
+        </section>
+
+        <!-- Detalhamento de Especialidades Extraídas do Currículo -->
+        <section class="about-details">
+            <h2 class="cv-section-title">Especialidades e Experiência</h2>
+            
+            <div class="skills-timeline">
+                
+                <div class="skill-item">
+                    <div class="skill-icon"><i class="fas fa-tools"></i></div>
+                    <div class="skill-info">
+                        <h3>Suporte & Infraestrutura de TI</h3>
+                        <p>Atuação completa em suporte a hardware, software e formatação de computadores e atendimento ao usuário.</p>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-icon"><i class="fas fa-cash-register"></i></div>
+                    <div class="skill-info">
+                        <h3>Implementação de ERP (Bling)</h3>
+                        <p>Especialista na configuração e implantação da plataforma Bling em lojas físicas para gerenciamento completo de frentes de caixa, controle de estoque integrado e otimização de vendas.</p>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-icon"><i class="fas fa-shopping-basket"></i></div>
+                    <div class="skill-info">
+                        <h3>Consultoria para Lojas Virtuais</h3>
+                        <p>Cadastro de produtos, configurações internas e conexão com marketplaces.</p>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-icon"><i class="fas fa-paint-brush"></i></div>
+                    <div class="skill-info">
+                        <h3>Design Digital & Mídias Sociais</h3>
+                        <p>Criação de identidade visual, designs exclusivos e artes direcionadas para sites e mídias sociais, focando no posicionamento de marca e na experiência do usuário.</p>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="skill-info">
+                        <h3>Planejamento de Vendas</h3>
+                        <p>Desenvolvimento tático e estruturação de planejamentos para ações de vendas, integrando ferramentas digitais e métricas para maximizar resultados comerciais.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé estruturado com âncora id="contato" -->
+    <footer id="contato">
+        <div class="footer-container">
+            <div class="footer-left-wrapper">
+                <h3 class="contact-title">contato</h3>
+                <div class="footer-left">
+                    <div class="qr-code">
+                        <!-- Nome do QR Code corrigido para QR CODE WPP.jpeg -->
+                        <img src="QR CODE WPP.jpeg" alt="QR Code WhatsApp">
+                    </div>
+                    <form class="contact-form">
+    <div class="form-group">
+        <input type="text" placeholder="Nome" required>
+    </div>
+    <div class="form-group">
+        <input type="email" placeholder="E-mail" required>
+    </div>
+    <div class="form-group">
+        <textarea placeholder="Como posso ajudar no seu projeto?" required></textarea>
+    </div>
+    <button type="submit" class="btn-submit">Enviar Mensagem</button>
+</form>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:will.alves1305@outlook.com">will.alves1305@outlook.com</a>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="https://wa.me/5511960753222" target="_blank">(11) 96076-3322</a>
+                </div>
+                <div class="contact-info">
+                    <i class="fab fa-linkedin-in"></i>
+                    <a href="https://linkedin.com/in/" target="_blank">linkedin.com/in/william-alves</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
