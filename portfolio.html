@@ -332,18 +332,22 @@
                     <div class="qr-code">
                         <img src="QR CODE WPP.jpeg" alt="QR Code WhatsApp">
                     </div>
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <input type="text" placeholder="Nome" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="E-mail" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Como posso ajudar no seu projeto?" required></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">Enviar Mensagem</button>
-                    </form>
+                    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="dcbfcbc7-c94f-422b-b611-c91d7e7a6dba">
+
+    <input type="hidden" name="redirect" value="https://seu-usuario.github.io/Meu-Portif-lio/">
+
+    <div class="form-group">
+        <input type="text" name="Nome" placeholder="Nome" required>
+    </div>
+    <div class="form-group">
+        <input type="email" name="Email" placeholder="E-mail" required>
+    </div>
+    <div class="form-group">
+        <textarea name="Mensagem" placeholder="Como posso ajudar no seu projeto?" required></textarea>
+    </div>
+    <button type="submit" class="btn-submit">Enviar Mensagem</button>
+</form>
                 </div>
             </div>
 
