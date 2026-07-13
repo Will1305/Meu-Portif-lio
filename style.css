@@ -1,6 +1,14 @@
 /* ==========================================================================
    RESET E CONFIGURAÇÕES GERAIS
    ========================================================================== */
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +22,11 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* ==========================================================================
@@ -327,9 +339,22 @@ footer {
 
 /* Ajustes Responsivos para Mobile */
 @media (max-width: 900px) {
+    html, body {
+        overflow-x: hidden;
+    }
+    .portfolio-container, .services-page-container, .about-page-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
     .footer-container {
         flex-direction: column;
         gap: 50px;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden;
     }
     .footer-left {
         flex-direction: column;
@@ -601,9 +626,22 @@ footer {
 
 /* Responsividade para Telas Menores */
 @media (max-width: 900px) {
+    html, body {
+        overflow-x: hidden;
+    }
+    .portfolio-container, .services-page-container, .about-page-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
     .footer-container {
         flex-direction: column;
         gap: 50px;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden;
     }
     .footer-left {
         flex-direction: column;
