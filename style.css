@@ -656,3 +656,36 @@ footer {
         padding-top: 30px;
     }
 }
+
+/* Container para agrupar o aviso e o QR Code */
+.qr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Estilo da mensagem acima do QR Code */
+.qr-label {
+    color: #00d2ff;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+}
+
+.qr-label i {
+    font-size: 15px;
+}
+
+/* Estilo do texto de localização no rodapé */
+.contact-info span {
+    color: #cbd5e1;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+}

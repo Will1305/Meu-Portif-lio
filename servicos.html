@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
     <title>Serviços - William Alves</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -227,8 +228,11 @@
             <div class="footer-left-wrapper">
                 <h3 class="contact-title">contato</h3>
                 <div class="footer-left">
-                    <div class="qr-code">
-                        <img src="QR CODE WPP.jpeg" alt="QR Code WhatsApp">
+                    <div class="qr-container">
+                        <span class="qr-label"><i class="fab fa-whatsapp"></i> Fale no WhatsApp</span>
+                        <div class="qr-code">
+                            <img src="QR CODE WPP.jpeg" alt="QR Code WhatsApp">
+                        </div>
                     </div>
                     <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
                         <input type="hidden" name="access_key" value="dcbfcbc7-c94f-422b-b611-c91d7e7a6dba">
@@ -245,7 +249,7 @@
                         </div>
                         
                         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                        <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                        <button type="submit" class="btn-submit">Enviar Mensagem Por E-mail</button>
                     </form>
                 </div>
             </div>
@@ -262,6 +266,10 @@
                 <div class="contact-info">
                     <i class="fab fa-linkedin-in"></i>
                     <a href="https://linkedin.com/in/" target="_blank">linkedin.com/in/william-alves</a>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Atendimento em Mauá e regiões próximas (SP)</span>
                 </div>
             </div>
         </div>
