@@ -307,7 +307,7 @@ footer {
 
 .contact-info {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Alinha o ícone no topo do texto em vez do centro */
     gap: 16px;
     font-size: 15px;
 }
@@ -317,12 +317,16 @@ footer {
     background: #00d2ff;
     width: 36px;
     height: 36px;
-    border-radius: 10px; /* Formato quadrado arredondado moderno */
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 15px;
     box-shadow: 0 4px 12px rgba(0, 210, 255, 0.2);
+    
+    /* PROPRIEDADES QUE RESOLVEM O BUG */
+    flex-shrink: 0; /* Impede que o ícone esmague/deforme */
+    margin-top: 2px; /* Garante alinhamento óptico perfeito com a primeira linha de texto */
 }
 
 .contact-info a {
