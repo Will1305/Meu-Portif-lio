@@ -693,3 +693,74 @@ footer {
     font-size: 14px;
     line-height: 1.4;
 }
+/* ==========================================================================
+   AJUSTES MOBILE: TEXTO JUSTIFICADO, TÍTULOS CENTRALIZADOS E RODAPÉ À ESQUERDA
+   ========================================================================== */
+
+@media (max-width: 900px) {
+    /* 1. Alinhamento dos parágrafos e listas (Justificados) */
+    p, 
+    .services-list li, 
+    .art-info p, 
+    .service-card-info p, 
+    .skill-info p,
+    .portfolio-intro p,
+    .services-intro p {
+        text-align: justify !important;
+        text-justify: inter-word;
+    }
+
+    /* 2. Alinhamento dos Títulos (Centralizados) */
+    h1, h2, h3,
+    .content-section h1,
+    .profile-side h2,
+    .contact-title,
+    .section-title,
+    .cv-section-title,
+    .portfolio-intro h1,
+    .services-intro h1,
+    .about-intro-text h1,
+    .about-intro-text h2 {
+        text-align: center !important;
+    }
+
+    /* Manter a borda do título de seção bonita no centro (opcional) */
+    .section-title, .cv-section-title {
+        border-left: none !important;
+        border-bottom: 3px solid #00d2ff;
+        padding-left: 0 !important;
+        padding-bottom: 8px;
+        display: inline-block;
+        width: 100%;
+    }
+
+    /* 3. Rodapé Alinhado à Esquerda no Mobile */
+    .footer-container {
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+
+    .footer-left {
+        align-items: stretch !important; /* Faz o formulário e QR code ocuparem a largura total */
+    }
+
+    .footer-right {
+        align-items: flex-start !important; /* Alinha os ícones e dados de contato à esquerda */
+        text-align: left !important;
+        width: 100%;
+    }
+
+    .contact-info {
+        justify-content: flex-start !important;
+        text-align: left !important;
+    }
+
+    .contact-info span, 
+    .contact-info a {
+        text-align: left !important;
+    }
+
+    .qr-container {
+        align-items: center !important; /* Mantém apenas o QR code centralizado em sua própria caixa */
+    }
+}
